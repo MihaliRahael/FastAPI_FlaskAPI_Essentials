@@ -71,7 +71,7 @@ As soon as this program is executed it will start a webserver. The output will s
 Significance of debug=True/False. Suppose our web app is up and running and later we have made some changes in application. Inorder to reflect it in web page we need to restart the flask app. Inorder to avoid it, we can set debug=True. Then the server will automatically restarted .
 
 ### Building URL dynamically
-
+```
 | from flask import Flask,redirect,url_for                                     |
 |------------------------------------------------------------------------------|
 |                                                                              |
@@ -104,3 +104,4 @@ Significance of debug=True/False. Suppose our web app is up and running and late
 |                                                                              |
 | if \_*name*\_=='**main**':                                                   |
 | app.run(debug=True)                                                          |
+```
