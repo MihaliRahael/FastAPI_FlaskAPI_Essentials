@@ -1,6 +1,6 @@
-**FAST API and FLASK ESSENTIALS**
+# FAST API and FLASK ESSENTIALS
 
-**Fast API**
+## Fast API
 
 Fast API is a modern, fast (high performing), web framework for building APIs with python 3.6+ based on standard python type hints. It uses ASGI (Asynchronous Server Gateway Interface, a successor to WSGI, provides a standard interface between async-capable python web servers, frameworks and application. Uvicorn library ensures that when we are running the file, it has to follow the ASGI standard.
 
@@ -18,7 +18,7 @@ pip install fastapi uvicorn
 
 uvicorn main:app --reload
 
-**Flask API**
+## Flask API
 
 Flask is a web framework written in python used for developing web application, we api machine learning applications etc. Flask is developed based on Jinja 2 template engine and WSGI concept.
 
@@ -30,7 +30,7 @@ Eg: we have an ML application’s pickle file for classifying cat/dog. As soon a
 
 <https://github.com/krishnaik06/Flask-Web-Framework>
 
-**Building a simple Flask application**
+### Building a simple Flask application
 
 1.  Important required libraries –
 -   request : to read the Posted value (HTTP POST)
@@ -44,7 +44,7 @@ from flask import Flask
 
 *\# defining WSGI application*
 
-app = Flask(__name__) *\# This will be starting point of my application where it will run*
+app = Flask(**name**) *\# This will be starting point of my application where it will run*
 
 @app.route(‘/’) *\# this is the first root. localhost/ means it should definitely go to homepage*. This is also called as decorator
 
@@ -58,11 +58,11 @@ def predict(): *\# always remember to give different function name*
 
 return "Prediction completed"
 
-if \__name__=="__main__":
+if \_*name*\_=="**main**":
 
 app.run(host=”0.0.0.0”, debug=True) *\# we can also give port here*
 
-Here Flask object we created is ‘app’ which is the WSGI standard. Whenever the app = Flask(__name__) is executed, the flask app will start its execution from if \__name__=="__main__":
+Here Flask object we created is ‘app’ which is the WSGI standard. Whenever the app = Flask(**name**) is executed, the flask app will start its execution from if \_*name*\_=="**main**":
 
 The decorator which binds with a function, takes two parameters, rule and options. Rule has set to “/". Whenever I go to this web page , the function hello() will get executed.
 
@@ -70,37 +70,37 @@ As soon as this program is executed it will start a webserver. The output will s
 
 Significance of debug=True/False. Suppose our web app is up and running and later we have made some changes in application. Inorder to reflect it in web page we need to restart the flask app. Inorder to avoid it, we can set debug=True. Then the server will automatically restarted .
 
-**Building URL dynamically**
+### Building URL dynamically
 
-| from flask import Flask,redirect,url_for                                      |
-|-------------------------------------------------------------------------------|
-|                                                                               |
-| import pandas                                                                 |
-| app=Flask(__name__)                                                           |
-|                                                                               |
-| @app.route('/')                                                               |
-| def welcome():                                                                |
-|  return 'Welcome to my Exam results page'                                     |
-|                                                                               |
-| @app.route('/success/\<int:score\>')                                          |
-| def success(score):                                                           |
-|  return "\<html\>\<body\>\<h1\>The Person is passed\</h1\>\</body\>\</html\>" |
-|                                                                               |
-|                                                                               |
-| @app.route('/fail/\<int:score\>')                                             |
-| def fail(score):                                                              |
-|  return "The Person has failed and the marks is "+ str(score)                 |
-|                                                                               |
-| \#\#\# Result checker                                                         |
-| @app.route('/results/\<int:marks\>')                                          |
-| def results(marks):                                                           |
-|  result=""                                                                    |
-|  if marks\<50:                                                                |
-|  result='fail'                                                                |
-|  else:                                                                        |
-|  result='success'                                                             |
-|  return redirect(url_for(result,score=marks))                                 |
-|                                                                               |
-|                                                                               |
-| if \__name__=='__main__':                                                     |
-|  app.run(debug=True)                                                          |
+| from flask import Flask,redirect,url_for                                     |
+|------------------------------------------------------------------------------|
+|                                                                              |
+| import pandas                                                                |
+| app=Flask(**name**)                                                          |
+|                                                                              |
+| @app.route('/')                                                              |
+| def welcome():                                                               |
+| return 'Welcome to my Exam results page'                                     |
+|                                                                              |
+| @app.route('/success/\<int:score\>')                                         |
+| def success(score):                                                          |
+| return "\<html\>\<body\>\<h1\>The Person is passed\</h1\>\</body\>\</html\>" |
+|                                                                              |
+|                                                                              |
+| @app.route('/fail/\<int:score\>')                                            |
+| def fail(score):                                                             |
+| return "The Person has failed and the marks is "+ str(score)                 |
+|                                                                              |
+| \#\#\# Result checker                                                        |
+| @app.route('/results/\<int:marks\>')                                         |
+| def results(marks):                                                          |
+| result=""                                                                    |
+| if marks\<50:                                                                |
+| result='fail'                                                                |
+| else:                                                                        |
+| result='success'                                                             |
+| return redirect(url_for(result,score=marks))                                 |
+|                                                                              |
+|                                                                              |
+| if \_*name*\_=='**main**':                                                   |
+| app.run(debug=True)                                                          |
